@@ -20,4 +20,5 @@ public:
     //return the face-value of the die
     int getValue();
 };
+
 #endif

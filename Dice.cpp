@@ -2,25 +2,24 @@
 #include <iostream>
 
 Die::Die() {
-    //random seed
+    //random
     srand(time(NULL));
 
-    //initializing variables
     sides = 6;
     value = 0;
 }
 
-//initalize the sides
+//sides initialization
 Die::Die(int sides) {
     sides = sides;
 }
 
-//roll
-void Die::roll() {
-    this->value = rand() % sides + 1;
-}
-
-//return the face-value of the die
+//return the face up of the die
 int Die::getValue() {
     return value;
+}
+
+//rolling function
+void Die::roll() {
+    this->value = rand() % sides + 1;
 }

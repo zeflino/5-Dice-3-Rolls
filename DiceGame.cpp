@@ -10,7 +10,6 @@ using namespace std;
 
 //function headers
 void showDice(Die[]);
-int getTotalScore(Die[]);
 
 //main function
 int main() {
@@ -21,8 +20,11 @@ int main() {
     //char holding the user input
     char userInput;
 
+    //total rolls
+    int totalRolls = 1;
+
     while (keepPlaying == true) {
-        //creaing the array
+        //creaing the array of 5 indexes
         Die myDice[5];
 
         //rolling the die calling our .roll() function from Die.h
@@ -30,15 +32,23 @@ int main() {
             myDice[rollNum].roll();
         }
 
-        //printing the score
+        //printing the results to the user
         showDice(myDice);
-        int score = getTotalScore(myDice);
 
-        cout << "\n\nWould you like to keep playing? y/n \n-> ";
+        cout << "\nThis was roll " << totalRolls << "/3. You have " << (3 - totalRolls) << " left!" << endl;
+
+        if (totalRolls == 3) {
+            keepPlaying = false;
+            break;
+        }
+
+        cout << "\nWould you like to keep playing? y/n \n-> ";
         cin >> userInput;
 
+        //asking user if they want to play again
         if (userInput == 'y') {
             keepPlaying = true;
+            totalRolls++;
         }
 
         else if (userInput == 'n') {
@@ -55,11 +65,12 @@ int main() {
     return 0;
 }
 
-int getTotalScore(Die total[]) {
+int getTotalScore(Die myDice[]) {
+    
     int totalScore = 0;
-    for (int index = 0; index < 5; index++) {
-        totalScore += total[index].getValue();
-    }
+
+    
+
     return totalScore;
 }
 
