@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Die.h" //other files
 #include <iomanip> //setw 
+#include "Dice.cpp" //including the other file containing the contents
 
 using namespace std;
 
