@@ -1,3 +1,6 @@
+//Zeferino Lino
+//This is my own work
+
 #ifndef DIE_H
 #define DIE_H
 
